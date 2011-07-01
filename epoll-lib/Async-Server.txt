@@ -1,0 +1,23 @@
+interface IAsyncServer
+method: 
+-Init(port, socket_type)
+-Run(IConnectionCallback)
+-Send(connection_info, data)
+-Close(connection_info)
+-Shutdown()
+
+--> EpollServer inherits
+
+interface IConnectionCallback
+-IncomingData(IAsyncServer, connection_info, data)
+-ConnectionClosed(connection_info)
+
+class ConnectionInfo:
+
+header without sys/epoll deps.
+
+logging:
+google-glog
+http://code.google.com/p/google-glog/
+
+
